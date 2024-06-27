@@ -1,0 +1,5 @@
+package com.healthCare.repository;
+
+public interface Doctor {
+
+}

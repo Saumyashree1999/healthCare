@@ -1,0 +1,6 @@
+package com.healthCare.annotation;
+
+public enum Speciality {
+
+	ORTHOPAEDIC, GYNECOLOGY, DERMATOLOGY, ENT
+}

@@ -1,0 +1,8 @@
+package com.healthCare.annotation;
+
+public enum City {
+
+	DELHI,
+	NOIDA,
+	FARIDABAD
+}

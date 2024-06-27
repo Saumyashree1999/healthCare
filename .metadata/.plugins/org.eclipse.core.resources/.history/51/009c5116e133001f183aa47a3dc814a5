@@ -1,0 +1,5 @@
+package com.healthCare.exceptions;
+
+public class ExceptionHandler {
+
+}

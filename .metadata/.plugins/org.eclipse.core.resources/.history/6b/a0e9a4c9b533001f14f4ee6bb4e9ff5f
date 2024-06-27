@@ -1,0 +1,24 @@
+package com.healthCare.serviceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.healthCare.entity.Patient;
+import com.healthCare.repository.PatientRepository;
+
+public class PatientServiceImpl {
+
+	@Autowired
+	private PatientRepository patientRepository;
+
+	public Patient addPatient(Patient patient) {
+		return patientRepository.save(patient);
+	}
+
+	public void removePatient(Long id) {
+		patientRepository.deleteById(id);
+	}
+
+	public Patient getPatientById(Long id) {
+		return patientRepository.findById(id).orElse(null);
+	}
+}

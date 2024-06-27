@@ -1,0 +1,12 @@
+package com.healthCare.annotation;
+
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+
+@Constraint(validatedBy = CityValidator.class)
+public @interface ValidCity {
+
+	String message() default "Invalid city, only Delhi, Noida, Faridabad are allowed.";
+	Class<?>[] groups() default {};
+	Class<? extends Payload>[] payload() default {};
+}

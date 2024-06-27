@@ -1,0 +1,10 @@
+package com.healthCare.service;
+
+import com.healthCare.entity.Doctor;
+
+public interface DoctorService {
+
+	public Doctor addDoctor(Doctor doctor);
+
+	public void deleteDoctor(Long id);
+}

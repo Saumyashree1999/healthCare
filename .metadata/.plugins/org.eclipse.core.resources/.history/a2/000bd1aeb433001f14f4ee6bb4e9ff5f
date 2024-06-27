@@ -1,0 +1,7 @@
+package com.healthCare.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Patient extends JpaRepository<PatientReposirory, Long> {
+
+}

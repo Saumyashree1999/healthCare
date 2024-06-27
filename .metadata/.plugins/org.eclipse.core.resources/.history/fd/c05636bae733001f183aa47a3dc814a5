@@ -1,0 +1,8 @@
+package com.healthCare.annotation;
+
+public @interface ValidCity {
+
+	String message() default "Invalid city.Only Delhi, Noida, Faridabad are allowed.";
+	Class<?> groups() default{};
+	Class<? extends payload>[] payload() default{};
+}

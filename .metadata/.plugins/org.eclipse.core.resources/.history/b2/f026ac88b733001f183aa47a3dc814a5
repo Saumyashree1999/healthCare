@@ -1,0 +1,22 @@
+package com.healthCare.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.healthCare.entity.Patient;
+import com.healthCare.service.PatientService;
+
+@RestController
+public class PatientController {
+
+	@Autowired
+	PatientService patientService;
+
+	public ResponseEntity<Patient> savePatient(Patient patient) {
+		Patient addPatient = patientService.addPatient(patient);
+		return new ResponseEntity<>(HttpStatus.CREATED).body(patient);
+	}
+
+}

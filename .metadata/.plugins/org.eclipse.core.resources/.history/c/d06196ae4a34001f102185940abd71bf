@@ -1,0 +1,5 @@
+package com.healthCare.annotation;
+
+public @interface ValidSymptom {
+
+}

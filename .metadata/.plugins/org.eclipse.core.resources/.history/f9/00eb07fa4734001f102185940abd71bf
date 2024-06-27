@@ -1,0 +1,6 @@
+package com.healthCare.annotation;
+
+public @interface ValidSpeciality {
+	ORTHOPEDIATIC,
+ GYN	Gynecology, Dermatology, ENT
+}

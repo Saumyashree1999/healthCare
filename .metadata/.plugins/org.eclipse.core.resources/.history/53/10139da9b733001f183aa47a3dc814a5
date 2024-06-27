@@ -1,0 +1,59 @@
+package com.healthCare.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.healthCare.entity.Patient;
+import com.healthCare.service.PatientService;
+
+@RestController
+public class PatientController {
+
+	@Autowired
+	PatientService patientService;
+
+	@PostMapping("/savePatient")
+	public ResponseEntity<Patient> savePatient(@RequestBody Patient patient) {
+
+		try {
+			Patient addPatient = this.patientService.addPatient(patient);
+			return ResponseEntity.status(HttpStatus.OK).body(addPatient);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+	}
+
+}
+/*
+ * 
+ * @PostMapping("/book") public ResponseEntity<Book> addBook(@RequestBody Book
+ * book) {
+ * 
+ * try { this.bookService.addBook(book); return
+ * ResponseEntity.status(HttpStatus.OK).body(book); } catch (Exception e) {
+ * e.printStackTrace(); return
+ * ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); } }
+ * 
+ * @GetMapping("/book") public ResponseEntity<List<Book>> getBooks() {
+ * List<Book> allBooks = this.bookService.getAllBooks(); if (allBooks.isEmpty())
+ * return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); return
+ * ResponseEntity.status(HttpStatus.OK).body(allBooks); }
+ * 
+ * @GetMapping("/book/{id}") public ResponseEntity<Book>
+ * getBook(@PathVariable("id") int id) { Book bookById =
+ * this.bookService.getBookById(id); if (bookById == null) return
+ * ResponseEntity.status(HttpStatus.NOT_FOUND).build(); return
+ * ResponseEntity.status(HttpStatus.OK).body(bookById); }
+ * 
+ * @DeleteMapping("/book/{id}") public ResponseEntity<Void>
+ * deleteBook(@PathVariable("id") int id) { try {
+ * this.bookService.deleteBook(id); return
+ * ResponseEntity.status(HttpStatus.NO_CONTENT).build(); } catch (Exception e) {
+ * e.printStackTrace(); return
+ * ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); } }
+ */

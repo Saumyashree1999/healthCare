@@ -1,0 +1,24 @@
+package com.healthCare.annotation;
+
+import java.util.Arrays;
+import java.util.List;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+
+public class CityValidator implements ConstraintValidator<ValidCity, String> {
+
+	private final List<String> availableCities = Arrays.asList("Delhi", "Noida", "Faridabad");
+
+	@Override
+	public void initialize(ValidCity constraintAnnotation) {
+		// No initialization required
+	}
+
+	@Override
+	public boolean isValid(String city, ConstraintValidatorContext c) {
+
+		return availableCities.contains(city);
+	}
+
+}

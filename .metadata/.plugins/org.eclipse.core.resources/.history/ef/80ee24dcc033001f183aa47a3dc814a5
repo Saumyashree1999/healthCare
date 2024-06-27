@@ -1,0 +1,18 @@
+package com.healthCare.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.healthCare.service.DoctorService;
+import com.healthCare.service.PatientService;
+
+@RestController
+public class SuggestionController {
+
+	@Autowired
+	private DoctorService doctorService;
+
+	@Autowired
+	private PatientService patientService;
+
+}

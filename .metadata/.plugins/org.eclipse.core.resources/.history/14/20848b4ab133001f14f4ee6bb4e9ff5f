@@ -1,0 +1,23 @@
+package com.healthCare.entity;
+
+import jakarta.persistence.Entity;
+import lombok.Data;
+import lombok.Getter;
+
+@Entity
+@Data
+public class Patient {
+
+	private Long id;
+
+	private String name;
+
+	private String city;
+
+	private String email;
+
+	private String phoneNumber;
+
+	private String symptom;
+
+}
